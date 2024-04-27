@@ -4,7 +4,7 @@ import UnoCSS from 'unocss/vite';
 import { resolve } from 'path';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
     UnoCSS(),
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ArcoResolver()],
       imports: [
         'vue',
         {
@@ -27,7 +27,7 @@ export default defineConfig({
       vueTemplate: true,
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ArcoResolver()],
       dirs: ['src/views/components', 'src/components'],
       dts: true,
       directoryAsNamespace: true,
