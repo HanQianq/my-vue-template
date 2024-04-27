@@ -19,7 +19,8 @@ export default defineConfig({
           'vue-router/auto': ['useRoute', 'useRouter'],
         },
       ],
-      dts: 'src/auto-imports.d.ts',
+      dirs: ['src/types', 'src/utils/tool'],
+      dts: 'auto-imports.d.ts',
       eslintrc: {
         enabled: true,
       },
@@ -29,6 +30,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
       dirs: ['src/views/components', 'src/components'],
       dts: true,
+      directoryAsNamespace: true,
     }),
   ],
   resolve: {
